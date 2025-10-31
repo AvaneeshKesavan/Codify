@@ -23,12 +23,12 @@ import TypeInference from './TsTopics/TsBasics/TypeInference';
 import TypeAssertions from './TsTopics/TsBasics/TypeAssertions';
 
 // Advanced Types
-// import UnionTypes from './TsTopics/AdvancedTypes/UnionTypes';
-// import IntersectionTypes from './TsTopics/AdvancedTypes/IntersectionTypes';
-// import LiteralTypes from './TsTopics/AdvancedTypes/LiteralTypes';
-// import Enums from './TsTopics/AdvancedTypes/Enums';
-// import Generics from './TsTopics/AdvancedTypes/Generics';
-// import UtilityTypes from './TsTopics/AdvancedTypes/UtilityTypes';
+import UnionTypes from './TsTopics/AdvancedTypes/UnionTypes';
+import IntersectionTypes from './TsTopics/AdvancedTypes/IntersectionTypes';
+import LiteralTypes from './TsTopics/AdvancedTypes/LiteralTypes';
+import Enums from './TsTopics/AdvancedTypes/Enums';
+import Generics from './TsTopics/AdvancedTypes/Generics';
+import UtilityTypes from './TsTopics/AdvancedTypes/UtilityTypes';
 
 // Functions and Classes
 // import FunctionTypes from './TsTopics/FunctionsClasses/FunctionTypes';
@@ -118,13 +118,13 @@ const TypeScriptEssentials = () => {
                 <Route path="type-inference" element={<TypeInference />} />
                 <Route path="type-assertions" element={<TypeAssertions />} />
 
-                {/* Advanced Types - Will be added in PR #4 */}
-                {/* <Route path="union-types" element={<UnionTypes />} />
+                {/* Advanced Types */}
+                <Route path="union-types" element={<UnionTypes />} />
                 <Route path="intersection-types" element={<IntersectionTypes />} />
                 <Route path="literal-types" element={<LiteralTypes />} />
                 <Route path="enums" element={<Enums />} />
                 <Route path="generics" element={<Generics />} />
-                <Route path="utility-types" element={<UtilityTypes />} /> */}
+                <Route path="utility-types" element={<UtilityTypes />} />
 
                 {/* Functions and Classes - Will be added in PR #5 */}
                 {/* <Route path="function-types" element={<FunctionTypes />} />
