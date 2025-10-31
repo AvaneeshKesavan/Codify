@@ -29,14 +29,9 @@
         "Abstract Classes"
     ],
     "Modules and Namespaces": [
-        "Modules",
-        "Namespaces",
-        "Import Export",
-        "Declaration Files"
+        "Modules"
     ],
     "Error Handling and Debugging": [
-        "Error Handling",
-        "Type Guards",
-        "Debugging"
+        "Error Handling"
     ]
 }
