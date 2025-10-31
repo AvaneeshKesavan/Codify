@@ -31,24 +31,19 @@ import Generics from './TsTopics/AdvancedTypes/Generics';
 import UtilityTypes from './TsTopics/AdvancedTypes/UtilityTypes';
 
 // Functions and Classes
-// import FunctionTypes from './TsTopics/FunctionsClasses/FunctionTypes';
-// import OptionalParameters from './TsTopics/FunctionsClasses/OptionalParameters';
-// import DefaultParameters from './TsTopics/FunctionsClasses/DefaultParameters';
-// import RestParameters from './TsTopics/FunctionsClasses/RestParameters';
-// import ClassTypes from './TsTopics/FunctionsClasses/ClassTypes';
-// import Interfaces from './TsTopics/FunctionsClasses/Interfaces';
-// import AbstractClasses from './TsTopics/FunctionsClasses/AbstractClasses';
+import FunctionTypes from './TsTopics/FunctionsClasses/FunctionTypes';
+import OptionalParameters from './TsTopics/FunctionsClasses/OptionalParameters';
+import DefaultParameters from './TsTopics/FunctionsClasses/DefaultParameters';
+import RestParameters from './TsTopics/FunctionsClasses/RestParameters';
+import ClassTypes from './TsTopics/FunctionsClasses/ClassTypes';
+import Interfaces from './TsTopics/FunctionsClasses/Interfaces';
+import AbstractClasses from './TsTopics/FunctionsClasses/AbstractClasses';
 
-// Modules and Namespaces
-// import Modules from './TsTopics/ModulesNamespaces/Modules';
-// import Namespaces from './TsTopics/ModulesNamespaces/Namespaces';
-// import ImportExport from './TsTopics/ModulesNamespaces/ImportExport';
-// import DeclarationFiles from './TsTopics/ModulesNamespaces/DeclarationFiles';
+// Modules and Namespaces (Consolidated)
+import ModulesAndNamespaces from './TsTopics/ModulesNamespaces/ModulesAndNamespaces';
 
-// Error Handling and Debugging
-// import ErrorHandling from './TsTopics/ErrorHandling/ErrorHandling';
-// import TypeGuards from './TsTopics/ErrorHandling/TypeGuards';
-// import Debugging from './TsTopics/ErrorHandling/Debugging';
+// Error Handling and Debugging (Consolidated)
+import ErrorHandlingAndDebugging from './TsTopics/ErrorHandling/ErrorHandlingAndDebugging';
 
 const TypeScriptEssentials = () => {
   const location = useLocation();
@@ -126,25 +121,20 @@ const TypeScriptEssentials = () => {
                 <Route path="generics" element={<Generics />} />
                 <Route path="utility-types" element={<UtilityTypes />} />
 
-                {/* Functions and Classes - Will be added in PR #5 */}
-                {/* <Route path="function-types" element={<FunctionTypes />} />
+                {/* Functions and Classes */}
+                <Route path="function-types" element={<FunctionTypes />} />
                 <Route path="optional-parameters" element={<OptionalParameters />} />
                 <Route path="default-parameters" element={<DefaultParameters />} />
                 <Route path="rest-parameters" element={<RestParameters />} />
                 <Route path="class-types" element={<ClassTypes />} />
                 <Route path="interfaces" element={<Interfaces />} />
-                <Route path="abstract-classes" element={<AbstractClasses />} /> */}
+                <Route path="abstract-classes" element={<AbstractClasses />} />
 
-                {/* Modules and Namespaces - Will be added in PR #6 */}
-                {/* <Route path="modules" element={<Modules />} />
-                <Route path="namespaces" element={<Namespaces />} />
-                <Route path="import-export" element={<ImportExport />} />
-                <Route path="declaration-files" element={<DeclarationFiles />} /> */}
+                {/* Modules and Namespaces */}
+                <Route path="modules" element={<ModulesAndNamespaces />} />
 
-                {/* Error Handling and Debugging - Will be added in PR #6 */}
-                {/* <Route path="error-handling" element={<ErrorHandling />} />
-                <Route path="type-guards" element={<TypeGuards />} />
-                <Route path="debugging" element={<Debugging />} /> */}
+                {/* Error Handling and Debugging */}
+                <Route path="error-handling" element={<ErrorHandlingAndDebugging />} />
 
               </Routes>
             </React.Suspense>
