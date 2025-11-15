@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Modal from "../components/Modal";
 import { useTheme } from "../context/ThemeContext";
 import { fetchFlashcards, addFlashcard } from "../utils/api";
-
+import { motion } from "framer-motion";
 export default function Flashcards() {
   const { theme } = useTheme();
   const isDark = theme === "dark";
@@ -27,7 +27,17 @@ export default function Flashcards() {
     "Microservice Architecture",
     "DevOps and CI/CD",
   ];
-
+  const backgroundVariants = {
+    hidden: { opacity: 0, scale: 1.05 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 1,
+        ease: "easeOut"
+      }
+    }
+  };
   const [topics, setTopics] = useState(defaultTopics);
   const [flashcards, setFlashcards] = useState([]);
   const [selectedTopic, setSelectedTopic] = useState("All");
@@ -119,22 +129,22 @@ export default function Flashcards() {
   };
 
   // Toggle flip 
- const toggleFlip = () => {
-  setFlipped((prev) => {
-    const newFlip = !prev;
+  const toggleFlip = () => {
+    setFlipped((prev) => {
+      const newFlip = !prev;
 
-    // If flipping to the back and the card wasn't reviewed before → increment count
-    if (newFlip) {
-      const currentCard = filteredFlashcards[currentIndex];
-      if (currentCard && !reviewedCards.has(currentCard._id)) {
-        setReviewCount((c) => c + 1);
-        setReviewedCards((prevSet) => new Set(prevSet).add(currentCard._id));
+      // If flipping to the back and the card wasn't reviewed before → increment count
+      if (newFlip) {
+        const currentCard = filteredFlashcards[currentIndex];
+        if (currentCard && !reviewedCards.has(currentCard._id)) {
+          setReviewCount((c) => c + 1);
+          setReviewedCards((prevSet) => new Set(prevSet).add(currentCard._id));
+        }
       }
-    }
 
-    return newFlip;
-  });
-};
+      return newFlip;
+    });
+  };
 
 
 
@@ -158,23 +168,20 @@ export default function Flashcards() {
 
   return (
     <div
-      className={`relative min-h-screen ${
-        isDark ? "text-white" : "text-gray-900"
-      } overflow-x-hidden`}
+      className={`relative min-h-screen ${isDark ? "text-white" : "text-gray-900"
+        } overflow-x-hidden`}
     >
       {/* Grid Background */}
-      <div
-        className="absolute top-0 left-0 w-full h-full -z-10"
-        style={{
-          backgroundImage: `
-          linear-gradient(to right, rgba(168, 85, 247, 0.08) 1px, transparent 1.5px),
-          linear-gradient(to bottom, rgba(168, 85, 247, 0.08) 1px, transparent 1.5px)
-        `,
-          backgroundSize: "30px 30px",
-        }}
-      ></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
+        <motion.div
+          variants={backgroundVariants}
+          initial="hidden"
+          animate="visible"
+          className={`absolute top-0 left-0 w-full h-full -z-10 bg-[size:30px_30px] ${isDark ? 'bg-grid-pattern-dark' : 'bg-grid-pattern-light'}`}
+        >
+          <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-br from-dark-bg-primary/90 via-transparent to-dark-bg-primary/50' : 'bg-gradient-to-br from-light-bg-primary/90 via-transparent to-light-bg-primary/50'}`}></div>
+        </motion.div>
         {/* Heading */}
         <div className="text-center mb-12">
           <h1 className="page-heading">Flashcards</h1>
@@ -188,11 +195,10 @@ export default function Flashcards() {
           <div className="relative w-full max-w-md">
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className={`w-full flex justify-between items-center px-4 py-3 rounded-lg font-medium border ${
-                isDark
-                  ? "bg-gray-800 border-gray-700 text-white"
-                  : "bg-white border-gray-300 text-gray-900"
-              }`}
+              className={`w-full flex justify-between items-center px-4 py-3 rounded-lg font-medium border ${isDark
+                ? "bg-gray-800 border-gray-700 text-white"
+                : "bg-white border-gray-300 text-gray-900"
+                }`}
             >
               {selectedTopic === "All" ? "Select Topic" : selectedTopic}
               <span className="text-lg">{dropdownOpen ? "▲" : "▼"}</span>
@@ -200,11 +206,10 @@ export default function Flashcards() {
 
             {dropdownOpen && (
               <div
-                className={`absolute mt-2 w-full max-h-60 overflow-y-auto rounded-lg shadow-lg border z-50 ${
-                  isDark
-                    ? "bg-gray-900 border-gray-700 text-white"
-                    : "bg-white border-gray-300 text-gray-900"
-                }`}
+                className={`absolute mt-2 w-full max-h-60 overflow-y-auto rounded-lg shadow-lg border z-50 ${isDark
+                  ? "bg-gray-900 border-gray-700 text-white"
+                  : "bg-white border-gray-300 text-gray-900"
+                  }`}
               >
                 <button
                   onClick={() => {
@@ -283,18 +288,16 @@ export default function Flashcards() {
                   className={`flip-card-inner ${flipped ? "flipped" : ""} transition-transform duration-700`}
                 >
                   <div
-                    className={`flip-card-front flex flex-col justify-center items-center text-center p-8 rounded-2xl shadow-2xl ${
-                      isDark ? "bg-gray-800 text-white" : "bg-white text-gray-900"
-                    }`}
+                    className={`flip-card-front flex flex-col justify-center items-center text-center p-8 rounded-2xl shadow-2xl ${isDark ? "bg-gray-800 text-white" : "bg-white text-gray-900"
+                      }`}
                   >
                     <h2 className="text-3xl font-bold mb-2">{currentCard.term}</h2>
                     <p className="text-sm opacity-60">(Click to flip)</p>
                   </div>
 
                   <div
-                    className={`flip-card-back flex flex-col justify-center items-center text-center p-8 rounded-2xl shadow-2xl ${
-                      isDark ? "bg-primary-800 text-white" : "bg-primary-200 text-gray-900"
-                    }`}
+                    className={`flip-card-back flex flex-col justify-center items-center text-center p-8 rounded-2xl shadow-2xl ${isDark ? "bg-primary-800 text-white" : "bg-primary-200 text-gray-900"
+                      }`}
                   >
                     <h2 className="text-2xl font-semibold mb-3">Definition</h2>
                     <p className="text-lg leading-relaxed">{currentCard.definition}</p>
