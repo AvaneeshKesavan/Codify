@@ -16,39 +16,34 @@ import TsInstallation from './TsTopics/Introduction/TsInstallation';
 import TsConfiguration from './TsTopics/Introduction/TsConfiguration';
 
 // TypeScript Basics
-// import WhatIsTypeScript from './TsTopics/TsBasics/WhatIsTypeScript';
-// import TypeAnnotations from './TsTopics/TsBasics/TypeAnnotations';
-// import BasicTypes from './TsTopics/TsBasics/BasicTypes';
-// import TypeInference from './TsTopics/TsBasics/TypeInference';
-// import TypeAssertions from './TsTopics/TsBasics/TypeAssertions';
+import WhatIsTypeScript from './TsTopics/TsBasics/WhatIsTypeScript';
+import TypeAnnotations from './TsTopics/TsBasics/TypeAnnotations';
+import BasicTypes from './TsTopics/TsBasics/BasicTypes';
+import TypeInference from './TsTopics/TsBasics/TypeInference';
+import TypeAssertions from './TsTopics/TsBasics/TypeAssertions';
 
 // Advanced Types
-// import UnionTypes from './TsTopics/AdvancedTypes/UnionTypes';
-// import IntersectionTypes from './TsTopics/AdvancedTypes/IntersectionTypes';
-// import LiteralTypes from './TsTopics/AdvancedTypes/LiteralTypes';
-// import Enums from './TsTopics/AdvancedTypes/Enums';
-// import Generics from './TsTopics/AdvancedTypes/Generics';
-// import UtilityTypes from './TsTopics/AdvancedTypes/UtilityTypes';
+import UnionTypes from './TsTopics/AdvancedTypes/UnionTypes';
+import IntersectionTypes from './TsTopics/AdvancedTypes/IntersectionTypes';
+import LiteralTypes from './TsTopics/AdvancedTypes/LiteralTypes';
+import Enums from './TsTopics/AdvancedTypes/Enums';
+import Generics from './TsTopics/AdvancedTypes/Generics';
+import UtilityTypes from './TsTopics/AdvancedTypes/UtilityTypes';
 
 // Functions and Classes
-// import FunctionTypes from './TsTopics/FunctionsClasses/FunctionTypes';
-// import OptionalParameters from './TsTopics/FunctionsClasses/OptionalParameters';
-// import DefaultParameters from './TsTopics/FunctionsClasses/DefaultParameters';
-// import RestParameters from './TsTopics/FunctionsClasses/RestParameters';
-// import ClassTypes from './TsTopics/FunctionsClasses/ClassTypes';
-// import Interfaces from './TsTopics/FunctionsClasses/Interfaces';
-// import AbstractClasses from './TsTopics/FunctionsClasses/AbstractClasses';
+import FunctionTypes from './TsTopics/FunctionsClasses/FunctionTypes';
+import OptionalParameters from './TsTopics/FunctionsClasses/OptionalParameters';
+import DefaultParameters from './TsTopics/FunctionsClasses/DefaultParameters';
+import RestParameters from './TsTopics/FunctionsClasses/RestParameters';
+import ClassTypes from './TsTopics/FunctionsClasses/ClassTypes';
+import Interfaces from './TsTopics/FunctionsClasses/Interfaces';
+import AbstractClasses from './TsTopics/FunctionsClasses/AbstractClasses';
 
-// Modules and Namespaces
-// import Modules from './TsTopics/ModulesNamespaces/Modules';
-// import Namespaces from './TsTopics/ModulesNamespaces/Namespaces';
-// import ImportExport from './TsTopics/ModulesNamespaces/ImportExport';
-// import DeclarationFiles from './TsTopics/ModulesNamespaces/DeclarationFiles';
+// Modules and Namespaces (Consolidated)
+import ModulesAndNamespaces from './TsTopics/ModulesNamespaces/ModulesAndNamespaces';
 
-// Error Handling and Debugging
-// import ErrorHandling from './TsTopics/ErrorHandling/ErrorHandling';
-// import TypeGuards from './TsTopics/ErrorHandling/TypeGuards';
-// import Debugging from './TsTopics/ErrorHandling/Debugging';
+// Error Handling and Debugging (Consolidated)
+import ErrorHandlingAndDebugging from './TsTopics/ErrorHandling/ErrorHandlingAndDebugging';
 
 const TypeScriptEssentials = () => {
   const location = useLocation();
@@ -111,40 +106,35 @@ const TypeScriptEssentials = () => {
                 <Route path="installation" element={<TsInstallation />} />
                 <Route path="configuration" element={<TsConfiguration />} />
 
-                {/* TypeScript Basics - Will be added in PR #3 */}
-                {/* <Route path="what-is-typescript" element={<WhatIsTypeScript />} />
+                {/* TypeScript Basics */}
+                <Route path="what-is-typescript" element={<WhatIsTypeScript />} />
                 <Route path="type-annotations" element={<TypeAnnotations />} />
                 <Route path="basic-types" element={<BasicTypes />} />
                 <Route path="type-inference" element={<TypeInference />} />
-                <Route path="type-assertions" element={<TypeAssertions />} /> */}
+                <Route path="type-assertions" element={<TypeAssertions />} />
 
-                {/* Advanced Types - Will be added in PR #4 */}
-                {/* <Route path="union-types" element={<UnionTypes />} />
+                {/* Advanced Types */}
+                <Route path="union-types" element={<UnionTypes />} />
                 <Route path="intersection-types" element={<IntersectionTypes />} />
                 <Route path="literal-types" element={<LiteralTypes />} />
                 <Route path="enums" element={<Enums />} />
                 <Route path="generics" element={<Generics />} />
-                <Route path="utility-types" element={<UtilityTypes />} /> */}
+                <Route path="utility-types" element={<UtilityTypes />} />
 
-                {/* Functions and Classes - Will be added in PR #5 */}
-                {/* <Route path="function-types" element={<FunctionTypes />} />
+                {/* Functions and Classes */}
+                <Route path="function-types" element={<FunctionTypes />} />
                 <Route path="optional-parameters" element={<OptionalParameters />} />
                 <Route path="default-parameters" element={<DefaultParameters />} />
                 <Route path="rest-parameters" element={<RestParameters />} />
                 <Route path="class-types" element={<ClassTypes />} />
                 <Route path="interfaces" element={<Interfaces />} />
-                <Route path="abstract-classes" element={<AbstractClasses />} /> */}
+                <Route path="abstract-classes" element={<AbstractClasses />} />
 
-                {/* Modules and Namespaces - Will be added in PR #6 */}
-                {/* <Route path="modules" element={<Modules />} />
-                <Route path="namespaces" element={<Namespaces />} />
-                <Route path="import-export" element={<ImportExport />} />
-                <Route path="declaration-files" element={<DeclarationFiles />} /> */}
+                {/* Modules and Namespaces */}
+                <Route path="modules" element={<ModulesAndNamespaces />} />
 
-                {/* Error Handling and Debugging - Will be added in PR #6 */}
-                {/* <Route path="error-handling" element={<ErrorHandling />} />
-                <Route path="type-guards" element={<TypeGuards />} />
-                <Route path="debugging" element={<Debugging />} /> */}
+                {/* Error Handling and Debugging */}
+                <Route path="error-handling" element={<ErrorHandlingAndDebugging />} />
 
               </Routes>
             </React.Suspense>
